@@ -1,18 +1,27 @@
 export const defaultTheme = {
+    colors: {
     'primary': '#5636D3',
 
     'segundary': '#FF872C',
     'segundary_light': 'rgba(255, 135, 44, 0.3)',
 
-    'green': '#12A454',
-    'green_light': 'rgba(18, 164, 84, 0.5)',
+    'success': '#12A454',
+    'success_light': 'rgba(18, 164, 84, 0.5)',
 
-    'red': '#E83F5B',
-    'red_light': 'rgba(235, 63, 91, 0.5)',
+    'attention': '#E83F5B',
+    'attention_light': 'rgba(235, 63, 91, 0.5)',
 
     'shape': '#FFFFFF',
     'title': '#363F5F',
     'text': '#969CB3',
+    'text_dark': '#000000',
     'backgroung': '#F0F2F5',
+    },
 
-} as const
+    fonts: {
+        'regular': 'Poppins_400Regular',
+        'medium': 'Poppins_500Medium',
+        'bold': 'Poppins_700Bold'
+    }
+
+} 
