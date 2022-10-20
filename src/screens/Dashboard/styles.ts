@@ -3,6 +3,11 @@ import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
+
+
+
+/*---------------------------- Header Config --------------------------------*/
+
 export const Container = styled.View`
   flex: 1;
 
@@ -19,7 +24,11 @@ export const Header =styled.View`
   align-items: flex-start;
   flex-direction: row;
 `;
-  
+
+
+  /*------------------ User Config / Header Container  --------------------- */
+
+
   export const UserWrapper = styled.View`
     width: 100%;
 
@@ -30,7 +39,7 @@ export const Header =styled.View`
     justify-content: space-between;
     align-items: center;
   `;
-  
+
   export const UserInfo = styled.View`
     flex-direction: row;
     align-items: center;
@@ -44,7 +53,7 @@ export const Header =styled.View`
   `;
   export const User = styled.View`
     margin-left: 17px;
-  
+
   `;
   export const UserGreeting = styled.Text`
     color: ${props => props.theme.colors['shape']};
@@ -59,14 +68,17 @@ export const Header =styled.View`
     font-family: ${props => props.theme.fonts['bold']};
   `;
   export const LogOut = styled.View`
-  
+
   `;
 
   export const Icon = styled(Feather)`
     color: ${props => props.theme.colors['segundary']};
 
-    font-size: ${RFValue(24)}px;  
+    font-size: ${RFValue(24)}px;
   `;
+
+  /*--------------------------- Card Config ---------------------------------*/
+
 
   export const HightLightCards = styled.ScrollView.attrs({
     horizontal: true,
@@ -78,3 +90,22 @@ export const Header =styled.View`
     position: absolute;
     margin-top: ${RFPercentage(20)}px;
   `;
+
+
+  /*-------------------- Transaction History Config -------------------------*/
+
+
+  export const Transactions = styled.View `
+    flex: 1;
+    padding: 0 24px;
+
+    margin-top: ${RFPercentage(12)}px;
+  `;
+
+  export const Title = styled.Text `
+    font-size: ${RFValue(18)}px;
+    font-family: ${props => props.theme.fonts['regular']};
+  `;
+
+  /*--------------------- Transactions History Cards ------------------------*/
+
