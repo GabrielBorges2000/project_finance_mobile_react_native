@@ -24,4 +24,4 @@ export const defaultTheme = {
         'bold': 'Poppins_700Bold'
     }
 
-} 
+}
