@@ -3,8 +3,11 @@ import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './src/global/styles/theme/default';
-import { Dashboard } from './src/screens/Dashboard';
-import { 
+
+/* import { Dashboard } from './src/screens/Dashboard'; */
+import { Register } from './src/screens/Register';
+
+import {
   useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
@@ -24,7 +27,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Dashboard />
-    </ThemeProvider>  
+      {/* <Dashboard /> */}
+      <Register />
+    </ThemeProvider>
   )
 }
