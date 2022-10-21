@@ -28,7 +28,7 @@ export function Dashboard() {
     {
       id: '1',
       type: 'positive',
-      title: 'Desenvimento de site',
+      title: 'Desenvolvimento de site',
       amount: 'R$ 12.000,00',
       category: {
         name: 'Vendas',
