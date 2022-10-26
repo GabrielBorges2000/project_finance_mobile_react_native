@@ -1,22 +1,30 @@
 import { Feather } from '@expo/vector-icons';
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
 import styled, { css } from "styled-components/native";
 
-export interface TypeProps{
+export interface IconProps{
   type: 'up' | 'down';
 }
 
-export const Container = styled.TouchableOpacity`
-  border: 1px solid ${(props) => props.theme.colors['text']};
+export interface ContainerProps{
+  isActive: boolean;
+  type: 'up' | 'down';
+}
+
+export const Container = styled.TouchableOpacity<ContainerProps>`
+  border: 1.5px solid ${(props) => props.theme.colors['text']};
   border-radius: 5px;
-  padding: 15px 35px;
-  width: ${RFValue(160)}px;
-  height: ${RFValue(56)}px;
+  padding: 16px;
+  width: 49%;
+  height: 56px;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+
+  
 `;
 
-export const Icon = styled(Feather)<TypeProps>`
+export const Icon = styled(Feather)<IconProps>`
   align-items: center;
   font-size: ${RFValue(24)}px;
 
@@ -27,12 +35,13 @@ export const Icon = styled(Feather)<TypeProps>`
   ${({ type }) => type === 'down' && css`
     color: ${(props) => props.theme.colors['attention']};
   `};
-  margin-right: 14px;
+  margin-right: 12px;
 `;
 
 export const Title = styled.Text`
   align-items: center;
   font-size: ${RFValue(14)}px;
   color: ${(props) => props.theme.colors['text_dark']};
+  font-family: ${(props) => props.theme.fonts['regular']};
 `;
 
