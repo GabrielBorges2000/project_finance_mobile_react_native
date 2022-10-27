@@ -38,9 +38,8 @@ export const Fields = styled.View`
 
 `;
 
-export const FieldsTranactionsTypeButton = styled.View`
+export const Transactiontype = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 16px;
-  flex: 1;
+  margin: 8px 0 16px 0;
 `;

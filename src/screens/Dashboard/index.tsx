@@ -109,8 +109,10 @@ export function Dashboard() {
 
         <TransactionList
           data={data}
-          keyExtractor={(item: DataListProps) => item.id}
-          renderItem={({item}) =>  (<TransactionCard data={item} />)}
+          keyExtractor={(item : DataListProps) => item.id}
+          renderItem={({item}) => (
+            <TransactionCard data={item} />
+          )}
           showsVerticalScrollIndicator= {false}
           contentContainerStyle={{
             paddingBottom: getBottomSpace()
