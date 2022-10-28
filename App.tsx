@@ -4,9 +4,9 @@ import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './src/global/styles/theme/default';
 
-import { Dashboard } from './src/screens/Dashboard';
+/* import { Dashboard } from './src/screens/Dashboard'; */
 import { Register } from './src/screens/Register';
-import { CategorySelect } from './src/screens/CategorySelect';
+/* import { CategorySelect } from './src/screens/CategorySelect'; */
 
 import {
   useFonts,
