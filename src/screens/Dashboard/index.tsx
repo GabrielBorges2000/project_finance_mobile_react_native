@@ -17,7 +17,8 @@ import {
   UserGreeting,
   UserInfo,
   UserName,
-  UserWrapper
+  UserWrapper,
+  LogoutButton,
 } from './styles';
 
 export interface DataListProps extends TransactionCardProps {
@@ -75,8 +76,9 @@ export function Dashboard() {
             </User>
 
           </UserInfo>
-
-          <Icon name='power'/>
+          <LogoutButton onPress ={() => {}}>
+            <Icon name='power'/>
+          </LogoutButton>
         </UserWrapper>
 
       </Header>
@@ -111,7 +113,7 @@ export function Dashboard() {
           data={data}
           keyExtractor={(item : DataListProps) => item.id}
           renderItem={({item}) => (
-            <TransactionCard data={item} />
+            <TransactionCard data={(item)} />
           )}
           showsVerticalScrollIndicator= {false}
           contentContainerStyle={{

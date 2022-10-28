@@ -3,9 +3,6 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
-
-
-
 /*---------------------------- Header Config --------------------------------*/
 
 export const Container = styled.View`
@@ -55,7 +52,7 @@ export const Header =styled.View`
     font-size: ${RFValue(18)}px;
     font-family: ${props => props.theme.fonts['bold']};
   `;
-  export const LogOut = styled.View`
+export const LogoutButton = styled.TouchableOpacity`
 
   `;
 

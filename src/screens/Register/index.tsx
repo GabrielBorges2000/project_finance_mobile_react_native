@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
-import { Modal, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import {
+  Modal,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Alert
+} from 'react-native';
+
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+
 
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
@@ -17,10 +27,26 @@ import {
   Transactiontype,
 } from './styles'
 
+
+
 interface FormData {
   name: string;
   amount: string;
 }
+
+const schema = yup.object().shape({
+  name: yup
+  .string()
+  .required('O nome é obrigatório!'),
+
+  amount: yup
+  .number()
+  .typeError('Informe um valor númerico!')
+  .positive('O valor não pode ser negativo!')
+  .required('O valor é obrigatório!'),
+
+}).required()
+
 export function Register() {
   const [transactionType, setTransactionType] = useState('')
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
@@ -33,9 +59,12 @@ export function Register() {
   const {
     control,
     handleSubmit,
-  } =useForm();
+    formState: { errors }
+  } = useForm({
+    resolver:yupResolver(schema)
+  });
 
-  function handleTransactionTypeButtonSelect(type: 'up' | 'down'){
+  function handleTransactionTypeSelect(type: 'up' | 'down'){
     setTransactionType(type);
   }
 
@@ -48,6 +77,12 @@ export function Register() {
   }
 
   function handleRegister(form : FormData) {
+    if(!transactionType)
+      return Alert.alert('Selecione o tipo da transação');
+
+    if(category.key === 'category')
+      return Alert.alert('Selecione a categoria');
+
     const data ={
       name:form.name,
       amount: form.amount,
@@ -73,25 +108,27 @@ export function Register() {
               placeholder='Name'
               autoCapitalize='sentences'
               autoCorrect={false}
+              error={errors.name && errors.name.message}
             />
             <InputForm
               name='amount'
               control={control}
               placeholder='Preço'
               keyboardType='numeric'
+              error={errors.amount && errors.amount.message}
             />
 
             <Transactiontype>
               <TransactionTypeButton
               type='up'
               title='Income'
-              onPress={() => handleTransactionTypeButtonSelect('up')}
+              onPress={() => handleTransactionTypeSelect('up')}
               isActive={transactionType === 'up'}
             />
             <TransactionTypeButton
               type='down'
               title='OutCome'
-              onPress={() => handleTransactionTypeButtonSelect('down')}
+              onPress={() => handleTransactionTypeSelect('down')}
               isActive={transactionType === 'down'}
             />
             </Transactiontype>
