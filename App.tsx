@@ -13,6 +13,7 @@ import {
   Poppins_700Bold
  } from '@expo-google-fonts/poppins';
 import { AppRoutes } from './src/routes/app.routes';
+import { Dashboard } from './src/screens/Dashboard';
 
 
 
@@ -24,7 +25,7 @@ export default function App() {
   });
 
   if (!fontsLoaded){
-    return <AppLoading />
+    <AppLoading />
   }
 
   return (

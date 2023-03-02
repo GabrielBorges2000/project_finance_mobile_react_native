@@ -32,8 +32,6 @@ export function TransactionTypeButton({title, type, isActive, ...rest}: Props){
         <Title>
           {title}
         </Title>
-
-
     </Container>
   )
 }
