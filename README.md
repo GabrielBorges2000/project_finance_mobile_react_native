@@ -39,7 +39,7 @@ Para usar o app, siga estas etapas:
 
 ##### IOS
 
-<img src="./assets/ios_qr.png" alt="exemplo imagem">
+<img src="./src/assets/ios_qr.png" alt="exemplo imagem">
 
 ```
 exp://u.expo.dev/update/8059807f-4c30-4ec8-88ea-cc44f39c286d
@@ -47,7 +47,7 @@ exp://u.expo.dev/update/8059807f-4c30-4ec8-88ea-cc44f39c286d
 
 ##### Android
 
-<img src="./assets/android_qr.png" alt="exemplo imagem">
+<img src="./src/assets/android_qr.png" alt="exemplo imagem">
 
 ```
 exp://u.expo.dev/update/2ccae122-14cf-45fa-a762-dbdea44afd52
